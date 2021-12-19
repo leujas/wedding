@@ -12076,7 +12076,7 @@ background-color:#1A1A1A;
 @media (max-width: 600px) {
   .story-section ul li:nth-child(odd) img {
     float: none;
-    display: none;
+/*    display: none;*/
   }
 }
 
@@ -12126,7 +12126,7 @@ background-color:#1A1A1A;
 @media (max-width: 600px) {
   .story-section ul li:nth-child(even) img {
     float: none;
-    display: none;
+/*    display: none;*/
   }
 }
 
