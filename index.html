@@ -873,7 +873,9 @@
                                                                         </p>
                                                                         <p><span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email Address" required="true" required></span> </p>
                                                                         <p><span class="wpcf7-form-control-wrap your-phone"><input type="text" name="phone" size="40" class="wpcf7-form-control wpcf7-text wpcf7-phone wpcf7-validates-as-required wpcf7-validates-as-phone" aria-required="true" aria-invalid="false" placeholder="Phone Number" required></span> </p>
+                                                                        <p><span class="wpcf7-form-control-wrap your-address"><input type="text" name="address" size="40" class="wpcf7-form-control wpcf7-text wpcf7-address wpcf7-validates-as-required wpcf7-validates-as-address" id='autocomplete' aria-required="true" aria-invalid="false" placeholder="Address" required></span> </p>
                                                                         <p><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Message" ></textarea></span> </p>
+                                                                        
                                                                         <p class="wrap-submit">
                                                                             <input type="submit" value="SUBMIT" class="wpcf7-form-control wpcf7-submit"><span class="ajax-loader"></span></p>
                                                                     </div>
@@ -962,6 +964,10 @@
     <script src="./wedding/jquery.min.js"></script>
     <script src="./wedding/jquery-plugin-collection.js"></script>
     <script src="./wedding/iframe_api"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTTIJr20XDCPYlerG5l3_HlbtMdgNpsG0&libraries=places&callback=initAutocomplete" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script>
         if (window.attachEvent) {
             window.attachEvent('onload', wpfdr_google);
@@ -974,7 +980,14 @@
                 jQuery(e).attr("href", jQuery(e).attr("wpfc-href"));
             });
         }
+        function initAutocomplete() {
+          // Create the autocomplete object, restricting the search to geographical
+          // location types.
+          autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+            {types: ['geocode']});
 
+        }
     </script>
     <script>
         var CATANIS = {
