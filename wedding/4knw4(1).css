@@ -12136,6 +12136,10 @@ background-color:#1A1A1A;
   bottom: 8px;
 }
 
+.story-details {
+    text-align: justify;
+}
+
 @media (max-width: 600px) {
   .story-section ul li:nth-child(even):after {
     display: none;
